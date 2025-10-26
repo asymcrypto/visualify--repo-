@@ -3,161 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visualify — Built by ViralizeLab</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Visualify Creator | ViralizeLab</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  <link rel="icon" href="https://img.icons8.com/fluency/48/paint-palette.png">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f4f6f8;
-      color: #111;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-    }
-
-    header {
-      width: 100%;
-      text-align: center;
-      padding: 1.2rem 0;
-      background: #1d9bf0;
-      color: white;
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    }
-
-    .container {
-      width: 95%;
-      max-width: 500px;
-      background: white;
-      border-radius: 20px;
-      margin: 1.5rem 0;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      padding: 1.5rem;
-    }
-
-    label {
-      font-weight: 600;
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    input, textarea, select, button {
-      width: 100%;
-      border: 1px solid #d1d5db;
-      border-radius: 12px;
-      padding: 10px 12px;
-      font-size: 15px;
-      margin-bottom: 1rem;
-      transition: all 0.2s ease;
-      font-family: 'Inter', sans-serif;
-    }
-
-    input:focus, textarea:focus, select:focus {
-      border-color: #1d9bf0;
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(29,155,240,0.2);
-    }
-
-    button {
-      background: #1d9bf0;
-      color: white;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #147bc3;
-    }
-
-    #card {
-      margin-top: 2rem;
-      border-radius: 20px;
-      padding: 1.5rem;
-      text-align: left;
-      width: 100%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-
-    #card.light {
-      background: #ffffff;
-      color: #0f1419;
-    }
-
-    #card.dark {
-      background: #15202b;
-      color: #e7e9ea;
-    }
-
-    #cardUsername {
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    #checkmark {
-      margin-left: 6px;
-    }
-
-    #cardText {
-      margin-top: 10px;
-      font-size: 1.05rem;
-      line-height: 1.5;
-    }
-
-    footer {
-      margin: 1.5rem 0;
-      color: #555;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    footer a {
-      color: #1d9bf0;
-      text-decoration: none;
-      font-weight: 600;
-    }
-  </style>
 </head>
 <body>
-  <header>🎨 Visualify — Create Shareable Tweet Cards</header>
+  <header>
+    <h1>Visualify Creator</h1>
+    <p>Make stunning post visuals in seconds</p>
+  </header>
 
-  <div class="container">
-    <label>Twitter Username</label>
-    <input id="username" placeholder="@YourHandle">
+  <main>
+    <div class="card-generator">
+      <div class="controls">
+        <input type="text" id="username" placeholder="Enter name (e.g. Asym Alwali)">
+        <textarea id="tweetText" placeholder="Write your text here..."></textarea>
 
-    <label>Badge (Checkmark)</label>
-    <select id="badge">
-      <option value="none">None</option>
-      <option value="blue">Blue Verified</option>
-      <option value="gold">Gold Verified</option>
-      <option value="gray">Gray Verified</option>
-    </select>
+        <div class="options">
+          <label>Theme:</label>
+          <select id="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="black">Black</option>
+          </select>
 
-    <label>Your Post Content</label>
-    <textarea id="tweet" rows="4" placeholder="Write your post or tweet here..."></textarea>
+          <label><input type="checkbox" id="checkmark"> Blue Check</label>
+        </div>
 
-    <button id="toggleTheme">Toggle Theme</button>
-    <button id="generate">Generate Visual</button>
-    <button id="download">Download</button>
+        <button id="generate">Generate</button>
+        <button id="download">Download</button>
+      </div>
 
-    <div id="card" class="light">
-      <div id="cardUsername">@Asym_Alwali<span id="checkmark"></span></div>
-      <div id="cardText">This is a sample tweet from Visualify. Built by ViralizeLab.</div>
+      <div id="preview" class="card-preview light">
+        <div class="tweet-card">
+          <div class="user-info">
+            <img src="https://api.iconify.design/mdi:account-circle.svg" alt="User" class="avatar">
+            <span id="displayName">Asym Alwali</span>
+            <span id="blueCheck" class="checkmark">✔️</span>
+          </div>
+          <p id="displayText">Write something amazing here...</p>
+        </div>
+      </div>
     </div>
-  </div>
+  </main>
 
   <footer>
-    Built with ❤️ by <a href="https://x.com/Asym_Alwali" target="_blank">@Asym_Alwali</a> • 
-    Powered by <a href="https://x.com/ViralizeLab" target="_blank">ViralizeLab</a>
+    <p>Built by <strong>ViralizeLab</strong> · <a href="https://x.com/Asym_Alwali" target="_blank">@Asym_Alwali</a></p>
   </footer>
 
   <script src="script.js"></script>
