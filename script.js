@@ -1,42 +1,29 @@
 const usernameInput = document.getElementById("username");
-const tweetInput = document.getElementById("tweet");
-const badgeSelect = document.getElementById("badge");
-const toggleThemeBtn = document.getElementById("toggleTheme");
+const tweetText = document.getElementById("tweetText");
+const displayName = document.getElementById("displayName");
+const displayText = document.getElementById("displayText");
+const themeSelect = document.getElementById("theme");
+const preview = document.getElementById("preview");
 const generateBtn = document.getElementById("generate");
 const downloadBtn = document.getElementById("download");
-const card = document.getElementById("card");
-const cardUsername = document.getElementById("cardUsername");
-const cardText = document.getElementById("cardText");
-const checkmark = document.getElementById("checkmark");
-
-let darkMode = false;
-
-toggleThemeBtn.addEventListener("click", () => {
-  darkMode = !darkMode;
-  card.className = darkMode ? "dark" : "light";
-});
+const blueCheck = document.getElementById("blueCheck");
+const checkmarkToggle = document.getElementById("checkmark");
 
 generateBtn.addEventListener("click", () => {
-  const username = usernameInput.value || "@User";
-  const text = tweetInput.value || "Write something awesome!";
-  const badge = badgeSelect.value;
-
-  cardUsername.innerHTML = username;
-  checkmark.innerHTML = "";
-
-  if (badge !== "none") {
-    const emoji = badge === "blue" ? "💙" : badge === "gold" ? "🟡" : "⚪";
-    checkmark.textContent = emoji;
-  }
-
-  cardText.textContent = text;
+  displayName.textContent = usernameInput.value || "Anonymous";
+  displayText.textContent = tweetText.value || "Write something amazing here...";
+  const theme = themeSelect.value;
+  preview.className = `card-preview ${theme}`;
+  blueCheck.style.display = checkmarkToggle.checked ? "inline" : "none";
 });
 
 downloadBtn.addEventListener("click", () => {
-  html2canvas(card).then(canvas => {
-    const link = document.createElement("a");
-    link.download = "visualify_card.png";
+  html2canvas(preview).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'visualify_post.png';
     link.href = canvas.toDataURL();
     link.click();
   });
 });
+
+console.log("Visualify Creator ready 🚀");
