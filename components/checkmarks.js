@@ -32,3 +32,10 @@
 
   // Optional: make it editable later
 })();
+
+const markColor = document.querySelector("#markColor");
+if (markColor) {
+  markColor.addEventListener("change", e => {
+    document.querySelector(".checkmark").className = `checkmark ${e.target.value}`;
+  });
+}
