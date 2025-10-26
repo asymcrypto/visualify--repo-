@@ -265,3 +265,44 @@ footer a {
     grid-template-columns: repeat(3, 1fr);
   }
   }
+
+/* ==== Profile Section ==== */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1da1f2;
+}
+
+.username {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkmark {
+  font-size: 1rem;
+}
+
+.checkmark.blue {
+  color: #1da1f2;
+}
+
+.checkmark.gold {
+  color: #f5c518;
+}
+
+.checkmark.gray {
+  color: #8899a6;
+}
