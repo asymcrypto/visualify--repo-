@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create | Visualify</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <img src="assets/logo.png" alt="ViralizeLab Logo" class="logo">
+    <h1>Visualify</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="create.html" class="active">Create</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="builder">
+    <div class="input-box">
+      <input type="text" id="username" placeholder="@username" value="@Asym_Alwali">
+      <select id="badge">
+        <option value="none">No Badge</option>
+        <option value="blue">Blue Check</option>
+        <option value="gold">Gold Check</option>
+        <option value="gray">Gray Check</option>
+      </select>
+      <textarea id="tweet" placeholder="Write your tweet or quote here..."></textarea>
+      <div class="actions">
+        <button id="toggleTheme" class="btn">Toggle Theme</button>
+        <button id="generate" class="btn primary">Generate Visual</button>
+        <button id="download" class="btn secondary">Download</button>
+      </div>
+    </div>
+
+    <div class="preview" id="preview">
+      <div class="card light" id="card">
+        <div class="header">
+          <span id="cardUsername">@Asym_Alwali</span>
+          <span id="checkmark">✔️</span>
+        </div>
+        <p id="cardText">Your tweet will appear here...</p>
+        <div class="footer">Built by ViralizeLab • @Asym_Alwali • @ViralizeLab</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
