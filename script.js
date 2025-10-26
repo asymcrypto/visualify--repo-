@@ -27,3 +27,18 @@ downloadBtn.addEventListener("click", () => {
 });
 
 console.log("Visualify Creator ready 🚀");
+
+// Dynamic component loader
+async function loadComponent(file) {
+  try {
+    const res = await fetch(`components/${file}`);
+    const script = await res.text();
+    eval(script);
+    console.log(`${file} loaded ✅`);
+  } catch (err) {
+    console.error(`Failed to load ${file}:`, err);
+  }
+}
+
+// Load future updates automatically
+["themes.js", "checkmarks.js", "quotes.js"].forEach(loadComponent);
