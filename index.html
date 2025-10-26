@@ -1,48 +1,36 @@
-<link rel="stylesheet" href="style.css">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visualify — Built by ViralizeLab</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <title>Visualify by ViralizeLab</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>🎨 Visualify — Create Shareable Tweet Cards</header>
+  <header class="hero">
+    <img src="assets/logo.png" alt="Visualify Logo" class="logo">
+    <h1>Visualify</h1>
+    <p>Turn your thoughts, tweets, or quotes into viral visuals — instantly.</p>
+    <a href="create.html" class="btn-primary">Start Creating →</a>
+  </header>
 
-  <div class="container">
-    <label>Twitter Username</label>
-    <input id="username" placeholder="@YourHandle">
-
-    <label>Badge (Checkmark)</label>
-    <select id="badge">
-      <option value="none">None</option>
-      <option value="blue">Blue Verified</option>
-      <option value="gold">Gold Verified</option>
-      <option value="gray">Gray Verified</option>
-    </select>
-
-    <label>Your Post Content</label>
-    <textarea id="tweet" rows="4" placeholder="Write your post or tweet here..."></textarea>
-
-    <button id="toggleTheme">Toggle Theme</button>
-    <button id="generate">Generate Visual</button>
-    <button id="download">Download</button>
-
-    <div id="card" class="light">
-      <div id="cardUsername">@Asym_Alwali<span id="checkmark"></span></div>
-      <div id="cardText">This is a sample tweet from Visualify. Built by ViralizeLab.</div>
+  <section class="features">
+    <div>
+      <h2>🎨 Customize Freely</h2>
+      <p>Choose colors, fonts, and checkmarks to match your style.</p>
     </div>
-  </div>
+    <div>
+      <h2>⚡ Fast & Free</h2>
+      <p>Runs entirely on GitHub Pages — no sign-up or backend.</p>
+    </div>
+    <div>
+      <h2>📤 Export Anywhere</h2>
+      <p>Download your visuals instantly and share on X or LinkedIn.</p>
+    </div>
+  </section>
 
   <footer>
-    Built with ❤️ by <a href="https://x.com/Asym_Alwali" target="_blank">@Asym_Alwali</a> • 
-    Powered by <a href="https://x.com/ViralizeLab" target="_blank">ViralizeLab</a>
+    <p>Built by <strong>ViralizeLab</strong> · <a href="https://x.com/Asym_Alwali" target="_blank">@Asym_Alwali</a></p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
-    </html>
+</html>
