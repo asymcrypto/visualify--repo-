@@ -224,3 +224,44 @@ footer a {
 #blueCheck {
   display: none;
 }
+
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero .logo {
+  width: 80px;
+  height: 80px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #1da1f2;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.features div {
+  background: #161b22;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+@media (min-width: 700px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  }
